@@ -188,7 +188,6 @@
                                     "label": "Security Events",
                                     "value": "SecurityEvents"
                                 }
-
                             ],
                             "required": true
                         },
