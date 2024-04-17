@@ -187,19 +187,8 @@
                                 {
                                     "label": "Security Events",
                                     "value": "SecurityEvents"
-                                },
-                                {
-                                    "label": "Windows Firewall",
-                                    "value": "WindowsFirewall"
-                                },
-                                {
-                                    "label": "DNS Analytics",
-                                    "value": "DNS"
-                                },
-                                {
-                                    "label": "Linux Syslog",
-                                    "value": "Syslog"
                                 }
+
                             ],
                             "required": true
                         },
