@@ -46,6 +46,26 @@
                 },
                 {
                     "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
+                    "roleDefinitionId": "fb1c8493-542b-48eb-b624-b4c8fea62acd",
+                    "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
+               },
+                {
+                    "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
+                    "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46",
+                    "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
+                },
+                {
+                    "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
+                    "roleDefinitionId": "f1a07417-d97a-45cb-824c-7a7467783830",
+                    "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
+                },
+                {
+                    "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
+                    "roleDefinitionId": "f25e0fa2-a7c8-4377-a976-54943a77a395",
+                    "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
+                },
+                {
+                    "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
                     "roleDefinitionId": "ab8e14d6-4a74-4a29-9ba8-549422addade",
                     "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
                 },
