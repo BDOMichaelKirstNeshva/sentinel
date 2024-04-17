@@ -93,7 +93,7 @@
         },
         "rgName": {
             "type": "string",
-            "defaultValue": "bdodigital-managed-soc-rg"
+            "defaultValue": ""
         },
         "location": {
             "type": "string"
