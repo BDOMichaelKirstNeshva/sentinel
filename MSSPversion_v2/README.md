@@ -38,7 +38,7 @@ The template performs the following tasks:
 
 
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FBDOMichaelKirstNeshva%2Fsentinel%2Fmain%2Fv1%2Fv1_MSSP_BDODIGITAL_V1%2FMSSPversion%2Fmsspdeploy.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FBDOMichaelKirstNeshva%2Fsentinel%2Fmain%2Fv1%2Fv1_MSSP_BDODIGITAL_V1%2FMSSPversion%2FcreateUiDefinition.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FBDOMichaelKirstNeshva%2Fsentinel%2Fmain%2FMSSPversion_v2%2Fmsspdeploy.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FBDOMichaelKirstNeshva%2Fsentinel%2Fmain%2FMSSPversion_v2%2FcreateUiDefinition.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton""/>
 </a>
 
