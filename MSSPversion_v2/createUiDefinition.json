@@ -6,7 +6,7 @@
         "config": {
             "isWizard": true,
             "basics": {
-                "description": "**Microsoft Sentinel All-In-One** deployment, see more information about this project [here](https://github.com/Azure/Azure-Sentinel/Tools/Sentinel-All-In-One/).",
+                "description": "**Microsoft Sentinel All-In-One** (BDO DIgital Custom) deployment, see more information about this project [here](https://raw.githubusercontent.com/BDOMichaelKirstNeshva/sentinel/main/MSSPversion_v2/).",
                 "location": {
                     "label": "Location",
                     "toolTip": "Location for all resources",
