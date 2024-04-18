@@ -6,7 +6,7 @@
         "config": {
             "isWizard": false,
             "basics": {
-                "description": "**Microsoft Sentinel All-In-One** deployment, see more information about this project [here](https://github.com/Azure/Azure-Sentinel/Tools/Sentinel-All-In-One/).",
+                "description": "**Microsoft Sentinel All-In-One** (BDO DIgital Custom) deployment, see more information about this project [here](https://raw.githubusercontent.com/BDOMichaelKirstNeshva/sentinel/main/MSSPversion_v3/).",
                 "location": {
                     "label": "Location",
                     "toolTip": "Location for all resources",
@@ -64,7 +64,7 @@
                 "type": "Microsoft.Common.TextBox",
                 "label": "Number of days of retention",
                 "placeholder": "",
-                "defaultValue": "90",
+                "defaultValue": "30",
                 "toolTip": "Only numbers allowed",
                 "constraints": {
                     "required": true,
@@ -142,7 +142,62 @@
                     "required": true
                 },
                 "visible": "[if(equals(basics('pricingTier'),'CapacityReservation'), true, false)]"
-            }
+            },
+            {
+				"name": "termsAck",
+				"type": "Microsoft.Common.Section",
+				"label": "Service terms acknowledgement",
+				"elements": [
+					{
+						"name": "serviceTerms",
+						"type": "Microsoft.Common.TextBlock",
+						"visible": true,
+						"options": {
+							"text": "By continuing with this deployment, I acknowledge I have read the BDO Digital GmbH Managed SOC MDR/XDR/SOAR Service Terms and Conditions, also established in the Master Service Agreement and Statement of Work.",
+							"link": {
+								"label":"Learn more",
+								"uri": "https://www.bdo-digital.eu/terms"
+							}
+						}
+					},
+					{
+						"name": "emailAddress",
+						"type": "Microsoft.Common.TextBox",
+						"label": "Email",
+						"placeholder": "user@domain",
+						"defaultValue": "",
+						"toolTip": "Please enter a valid email account",
+						"constraints": {
+							"required": true,
+							"regex": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",
+							"validationMessage": "Email is not valid. Please re-enter."
+						},
+						"visible": true
+					},
+					{
+						"name": "legalAccept",
+						"type": "Microsoft.Common.CheckBox",
+						"defaultValue": false,
+						"label": "I have read BDO Digital GmbH Managed SOC MDR/XDR/SOAR service terms and conditions.",
+						"constraints": {
+							"required": true,
+							"validationMessage": "Please acknowledge the terms and conditions."
+						}
+					},
+					{
+						"type": "Microsoft.Common.TextBox",
+						"name": "companyName",
+						"label": "Company name:",
+						"toolTip": "Enter company name to be used by BDO Digital GmbH. (Only Letters)",
+						"constraints": {
+							"required": true,
+							"regex": "^[a-zA-Z]{4,16}$",
+							"validationMessage": "Name not valid. Name must be 4-16 characters, only Letters."
+						}
+					}
+				],
+				"visible": true
+			}
           ],
           "steps": [
             {
@@ -173,6 +228,7 @@
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select which Identity Providers will be synchronized with UEBA",
                       "placeholder": "Choose identity provider",
+                      "defaultValue": [{"value": "AzureActiveDirectory"}],
                       "multiselect": true,
                       "toolTip": "Select the identity providers that you would like to enable for UEBA",
                       "constraints": {
@@ -222,6 +278,7 @@
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select Microsoft Content Hub solutions to install",
                       "placeholder": "",
+                      "defaultValue": [{"value": "Azure Active Directory"}, {"value": "Azure Activity"}, {"value": "Microsoft 365"}, {"value": "Microsoft Defender for Cloud"}, {"value": "Microsoft Defender for Endpoint"}, {"value": "Teams"}, {"value": "Threat Intelligence"}],
                       "multiselect": true,
                       "filter": true,
                       "filterPlaceholder": "Filter items ...",
@@ -300,6 +357,7 @@
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select Essentials Content Hub solutions to install",
                       "placeholder": "",
+                      "defaultValue": [{"value": "Attacker Tools Threat Protection Essentials"}, {"value": "Cloud Identity Threat Protection Essentials"}, {"value": "Cloud Service Threat Protection Essentials"}, {"value": "Endpoint Threat Protection Essentials"}, {"value": "SOC Handbook"}, {"value": "SOC Process Framework"}, {"value": "UEBA Essentials"}],
                       "multiselect": true,
                       "filter": true,
                       "filterPlaceholder": "Filter items ...",
@@ -384,7 +442,7 @@
                           ],
                           "required": false
                       },
-                      "visible": true
+                      "visible": false
                   }
               ]
           },
@@ -407,6 +465,7 @@
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select data connectors to onboard",
                       "placeholder": "",
+                      "defaultValue": [{"value": "AzureActiveDirectory"}, {"value": "AzureActiveDirectoryIDP"}, {"value": "AzureActivity"}, {"value": "Microsoft365Defender"}, {"value": "MicrosoftDefenderForCloud"}, {"value": "Office365"}, {"value": "ThreatIntelligence"}],
                       "multiselect": true,
                       "filter": true,
                       "filterPlaceholder": "Filter items ...",
@@ -481,7 +540,7 @@
                       "label": "Select Azure Active Directory log types to enable",
                       "placeholder": "",
                       "multiselect": true,
-                      "defaultValue": [{"value": "SignInLogs"}, {"value": "AuditLogs"}],
+                      "defaultValue": [{"value": "SignInLogs"}, {"value": "AuditLogs"}, {"value": "UserRiskEvents"}, {"value": "RiskyUsers"}],
                       "toolTip": "Select Azure Active Directory log types you would like to stream to the workspace",
                       "constraints": {
                           "allowedValues": [
@@ -608,6 +667,61 @@
                       "visible": "[if(steps('analyticsRules').enableScheduledAlerts, true, false)]"
                   }
               ]
+          },
+          {
+              "name": "termsAck",
+              "type": "Microsoft.Common.Section",
+              "label": "Service Terms Acknowledgement",
+              "elements": [
+                  {
+                      "name": "serviceTerms",
+                      "type": "Microsoft.Common.TextBlock",
+                      "visible": true,
+                      "options": {
+                          "text": "By continuing with this deployment, I acknowledge I have read the BDO Digital GmbH Managed SOC MDR/XDR/SOAR Service Terms and Conditions, also established in the Master Service Agreement and Statement of Work.",
+                          "link": {
+                              "label":"Learn more",
+                              "uri": "https://www.bdo-digital.eu/terms"
+                          }
+                      }
+                  },
+                  {
+                      "name": "emailAddress",
+                      "type": "Microsoft.Common.TextBox",
+                      "label": "Email",
+                      "placeholder": "user@domain",
+                      "defaultValue": "",
+                      "toolTip": "Please enter a valid email account",
+                      "constraints": {
+                          "required": true,
+                          "regex": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",
+                          "validationMessage": "Email is not valid. Please re-enter."
+                      },
+                      "visible": true
+                  },
+                  {
+                      "name": "legalAccept",
+                      "type": "Microsoft.Common.CheckBox",
+                      "defaultValue": false,
+                      "label": "I have read BDO Digital GmbH Managed SOC MDR/XDR/SOAR service terms and conditions.",
+                      "constraints": {
+                          "required": true,
+                          "validationMessage": "Please acknowledge the terms and conditions."
+                      }
+                  },
+                  {
+                      "type": "Microsoft.Common.TextBox",
+                      "name": "companyName",
+                      "label": "Company name:",
+                      "toolTip": "Enter company name to be used by BDO Digital GmbH. (Only Letters)",
+                      "constraints": {
+                          "required": true,
+                          "regex": "^[a-zA-Z]{4,16}$",
+                          "validationMessage": "Name not valid. Name must be 4-16 characters and only letters."
+                      }
+                  }
+              ],
+              "visible": true
           }
         ],
         "outputs": {
@@ -628,6 +742,10 @@
             "enableMLAlerts": "[steps('analyticsRules').enableMLAlerts]",
             "enableScheduledAlerts": "[steps('analyticsRules').enableScheduledAlerts]",
             "severityLevels": "[steps('analyticsRules').severityLevels]",
+            "ackEmail": "[basics('termsAck').emailAddress]",
+			"legalAccept": "[basics('termsAck').legalAccept]",
+			"validDomain": "[substring(basics('termsAck').emailAddress,indexOf(basics('termsAck').emailAddress,'@'),sub(length(basics('termsAck').emailAddress),sub(indexOf(basics('termsAck').emailAddress,'@'),1)))]",
+			"companyName": "[toUpper(basics('termsAck').companyName)]",
             "rgName": "[basics('rgName')]"
         }
     }

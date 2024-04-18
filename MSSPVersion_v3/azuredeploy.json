@@ -7,7 +7,7 @@
             "metadata": {
                 "description": "Specify a unique name for your offer"
             },
-            "defaultValue": "[BDO Digital GmbH] SOC Central Managed Services"
+            "defaultValue": "[BDO Digital GmbH] SOC Central Managed Sentinel Standard Services"
         },
         "mspOfferDescription": {
             "type": "string",
@@ -38,10 +38,30 @@
                     "principalId": "c21f11f2-54af-4653-843a-d2ea8f3822ef",
                     "roleDefinitionId": "39bc4728-0917-49c7-9d2c-d95423bc2eb4",
                     "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Reader"
-                }, 
+                },
                 {
                     "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
                     "roleDefinitionId": "5e467623-bb1f-42f4-a55d-6e525e11384b",
+                    "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
+                },
+                {
+                    "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
+                    "roleDefinitionId": "fb1c8493-542b-48eb-b624-b4c8fea62acd",
+                    "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
+               },
+                {
+                    "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
+                    "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46",
+                    "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
+                },
+                {
+                    "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
+                    "roleDefinitionId": "f1a07417-d97a-45cb-824c-7a7467783830",
+                    "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
+                },
+                {
+                    "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
+                    "roleDefinitionId": "f25e0fa2-a7c8-4377-a976-54943a77a395",
                     "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
                 },
                 {
@@ -237,7 +257,7 @@
             "metadata": {
                 "description": "The location of resources"
             },
-            "defaultValue": "https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Tools/Sentinel-All-In-One/"
+            "defaultValue": "https://raw.githubusercontent.com/BDOMichaelKirstNeshva/sentinel/main/MSSPversion_v3/"
         }
     },
     "variables": {
@@ -261,7 +281,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(parameters('_artifactsLocation'), 'v2/LinkedTemplates/workspace.json')]",
+                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/workspace.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -300,7 +320,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(parameters('_artifactsLocation'), 'v2/LinkedTemplates/settings.json')]",
+                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/settings.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -332,7 +352,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(parameters('_artifactsLocation'), 'v2/LinkedTemplates/dataConnectors.json')]",
+                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/dataConnectors.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -370,7 +390,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(parameters('_artifactsLocation'), 'v2/LinkedTemplates/solutionsAndAlerts.json')]",
+                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/solutionsAndAlerts.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
