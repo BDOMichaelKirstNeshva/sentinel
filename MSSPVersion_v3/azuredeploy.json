@@ -257,7 +257,7 @@
             "metadata": {
                 "description": "The location of resources"
             },
-            "defaultValue": "https://raw.githubusercontent.com/BDOMichaelKirstNeshva/sentinel/main/MSSPversion_v3/"
+            "defaultValue": "https://raw.githubusercontent.com/BDOMichaelKirstNeshva/sentinel/main/MSSPVersion_v3/"
         }
     },
     "variables": {
