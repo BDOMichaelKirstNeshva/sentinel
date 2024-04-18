@@ -281,7 +281,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[uri(parameters('_artifactsLocation'), 'LinkedTemplates/workspace.json')]",
+                    "uri": "https://raw.githubusercontent.com/BDOMichaelKirstNeshva/sentinel/main/MSSPVersion_v3/LinkedTemplates/workspace.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
