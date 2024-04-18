@@ -17,7 +17,7 @@ $SubscriptionId = $context.Subscription.Id
 Write-Host "Connected to Azure with subscription: " + $context.Subscription
 
 $baseUri = "/subscriptions/${SubscriptionId}/resourceGroups/${ResourceGroup}/providers/Microsoft.OperationalInsights/workspaces/${Workspace}"
-$templatesUri = "$baseUri/providers/Microsoft.SecurityInsights/alertRuleTemplates?api-version=2023-04-01-preview"
+$templatesUri = "$baseUri/providers/Microsoft.SecurityInsights/alertRuleTemplates?api-version=2024-03-01"
 $alertUri = "$baseUri/providers/Microsoft.SecurityInsights/alertRules/"
 
 
@@ -41,7 +41,7 @@ if ($Connectors) {
                         if ($connector.connectorId -in $Connectors) {
                             #$return += $item.properties
                             $guid = New-Guid
-                            $alertUriGuid = $alertUri + $guid + '?api-version=2023-02-01'
+                            $alertUriGuid = $alertUri + $guid + '?api-version=2024-03-01'
 
                             $properties = @{
                                 displayName           = $item.properties.displayName
@@ -85,7 +85,7 @@ if ($Connectors) {
                         if ($connector.connectorId -in $Connectors) {
                             #$return += $item.properties
                             $guid = New-Guid
-                            $alertUriGuid = $alertUri + $guid + '?api-version=2022-12-01-preview'
+                            $alertUriGuid = $alertUri + $guid + '?api-version=2024-03-01'
 
                             $properties = @{
                                 displayName           = $item.properties.displayName
@@ -130,7 +130,7 @@ if ($Connectors) {
 #create rules from any rule templates that came from solutions
 #####
 
-$solutionURL = "https://management.azure.com/providers/Microsoft.ResourceGraph/resources?api-version=2021-03-01"
+$solutionURL = "https://management.azure.com/providers/Microsoft.ResourceGraph/resources?api-version=2022-10-01"
   
 #We only care about those rule templates that were created by Microsoft Sentinel solutions so
 #this query will make sure to filter out anything else as well as provide some overview data (which is not used)
@@ -292,7 +292,7 @@ foreach ($result in $results.data) {
             $guid = New-Guid
 
             #Create the URI we need to create the alert.  Using the latest and greatest API call
-            $alertUriGuid = $alertUri + $guid + '?api-version=2022-12-01-preview'
+            $alertUriGuid = $alertUri + $guid + '?api-version=2024-03-01'
 
             try {
                 Invoke-AzRestMethod -Path $alertUriGuid -Method PUT -Payload ($body | ConvertTo-Json -EnumsAsStrings -Depth 5)
