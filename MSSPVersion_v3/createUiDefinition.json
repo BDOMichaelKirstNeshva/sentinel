@@ -224,7 +224,7 @@
                       }
                   },
                   {
-                      "name": "identityProviders",
+                      "name": "identityProviders", 
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select which Identity Providers will be synchronized with UEBA",
                       "placeholder": "Choose identity provider",
@@ -278,7 +278,7 @@
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select Microsoft Content Hub solutions to install",
                       "placeholder": "",
-                      "defaultValue": [{"value": "Azure Active Directory"}, {"value": "Azure Activity"}, {"value": "Microsoft 365"}, {"value": "Microsoft Defender for Cloud"}, {"value": "Microsoft Defender for Endpoint"}, {"value": "Teams"}, {"value": "Threat Intelligence"}],
+                      "defaultValue": [{"value": "Azure Activity"}, {"value": "Microsoft 365"}, {"value": "Microsoft Defender for Cloud"}, {"value": "Microsoft Defender for Endpoint"}, {"value": "Teams"}, {"value": "Threat Intelligence"}],
                       "multiselect": true,
                       "filter": true,
                       "filterPlaceholder": "Filter items ...",
