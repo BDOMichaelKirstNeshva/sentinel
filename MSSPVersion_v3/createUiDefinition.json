@@ -278,7 +278,7 @@
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select Microsoft Content Hub solutions to install",
                       "placeholder": "",
-                      "defaultValue": [{"value": "Azure Activity"}, {"value": "Microsoft 365"}, {"value": "Microsoft Defender for Cloud"}, {"value": "Microsoft Defender for Endpoint"}, {"value": "Teams"}, {"value": "Threat Intelligence"}],
+                      "defaultValue": [{"value": "Azure Activity"}, {"value": "Microsoft 365"}, {"value": "Microsoft Defender for Cloud"}, {"value": "Microsoft Defender for Endpoint"}, {"value": "Teams"}],
                       "multiselect": true,
                       "filter": true,
                       "filterPlaceholder": "Filter items ...",
@@ -341,11 +341,6 @@
                                   "label": "Microsoft Teams",
                                   "description": "Microsoft Sentinel for Teams provides Teams security logs visibility and threat protection.",
                                   "value": "Teams"
-                              },
-                              {
-                                  "label": "Threat Intelligence",
-                                  "description": "Ingest threat indicators into Microsoft Sentinel. Threat indicators can be IP addresses, domains, URLs and file hashes and can be used to correlate across log sources for known indicators of compromise and/or indicators of active attack",
-                                  "value": "Threat Intelligence"
                               }
                           ],
                           "required": false
@@ -357,7 +352,7 @@
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select Essentials Content Hub solutions to install",
                       "placeholder": "",
-                      "defaultValue": [{"value": "Attacker Tools Threat Protection Essentials"}, {"value": "Cloud Identity Threat Protection Essentials"}, {"value": "Cloud Service Threat Protection Essentials"}, {"value": "Endpoint Threat Protection Essentials"}, {"value": "SOC Handbook"}, {"value": "SOC Process Framework"}, {"value": "UEBA Essentials"}],
+                      "defaultValue": [{"value": "Attacker Tools Threat Protection Essentials"}, {"value": "Cloud Identity Threat Protection Essentials"}, {"value": "Cloud Service Threat Protection Essentials"}, {"value": "Endpoint Threat Protection Essentials"}, {"value": "SOC Handbook"}, {"value": "SOC Process Framework"}],
                       "multiselect": true,
                       "filter": true,
                       "filterPlaceholder": "Filter items ...",
@@ -523,11 +518,6 @@
                                 "label": "Office 365",
                                 "description": "Relevant license and Global Admin or Security Admin permission required",
                                 "value": "Office365"
-                            },
-                            {
-                                "label": "Threat Intelligence Platforms",
-                                "description": "Global Admin or Security Admin permission required",
-                                "value": "ThreatIntelligence"
                             }
                           ],
                           "required": true
