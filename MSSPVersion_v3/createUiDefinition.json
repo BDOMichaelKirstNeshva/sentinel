@@ -308,7 +308,7 @@
                                   "value": "Microsoft 365"
                               },
                               {
-                                  "label": "Microsoft Defender for Cloud",
+                                  "label": "Microsoft Defender for Cloud (deprecated - please do not activate)",
                                   "description": "The Microsoft Defender for Cloud solution for Microsoft Sentinel allows you to ingest Security alerts reported in Microsoft Defender for Cloud on assessing your hybrid cloud workload's security posture.",
                                   "value": "Microsoft Defender for Cloud"
                               },
