@@ -31,7 +31,7 @@ $baseUri = "https://management.azure.com/subscriptions/${SubscriptionId}/resourc
 $alertUri = "$baseUri/providers/Microsoft.SecurityInsights/alertRules/"
 
 # Get a list of all the solutions
-$url = $baseUri + "/providers/Microsoft.SecurityInsights/contentProductPackages?api-version=2023-04-01-preview"
+$url = $baseUri + "/providers/Microsoft.SecurityInsights/contentProductPackages?api-version=2024-03-01"
 $allSolutions = (Invoke-RestMethod -Method "Get" -Uri $url -Headers $authHeader ).value
 
 #Deploy each single solution
@@ -42,7 +42,7 @@ foreach ($deploySolution in $Solutions) {
         Write-Error "Unable to get find solution with name $deploySolution" 
     }
     else {
-        $solutionURL = $baseUri + "/providers/Microsoft.SecurityInsights/contentProductPackages/$($singleSolution.name)?api-version=2023-04-01-preview"
+        $solutionURL = $baseUri + "/providers/Microsoft.SecurityInsights/contentProductPackages/$($singleSolution.name)?api-version=2024-03-01"
         $solution = (Invoke-RestMethod -Method "Get" -Uri $solutionURL -Headers $authHeader )
         Write-Host "Solution name: " $solution.name
         $packagedContent = $solution.properties.packagedContent
@@ -94,7 +94,7 @@ if (($SeveritiesToInclude -eq "None") -or ($null -eq $SeveritiesToInclude)) {
 Start-Sleep -Seconds 60
 
 #URL to get all the needed Analytic Rule templates
-$solutionURL = $baseUri + "/providers/Microsoft.SecurityInsights/contentTemplates?api-version=2023-05-01-preview"
+$solutionURL = $baseUri + "/providers/Microsoft.SecurityInsights/contentTemplates?api-version=2024-03-01"
 #Add a filter only return analytic rule templates
 $solutionURL += "&%24filter=(properties%2FcontentKind%20eq%20'AnalyticsRule')"
 
@@ -159,7 +159,7 @@ foreach ($result in $results ) {
             #Create the GUId for the alert and create it.
             $guid = (New-Guid).Guid
             #Create the URI we need to create the alert.
-            $alertUri = $BaseAlertUri + $guid + "?api-version=2022-12-01-preview"
+            $alertUri = $BaseAlertUri + $guid + "?api-version=2024-03-01"
             try {
                 Write-Host "Attempting to create rule $($displayName)"
                 $verdict = Invoke-RestMethod -Uri $alertUri -Method Put -Headers $authHeader -Body ($body | ConvertTo-Json -EnumsAsStrings -Depth 50)
@@ -167,7 +167,7 @@ foreach ($result in $results ) {
                 Write-Output "Succeeded"
                 $solution = $allSolutions.properties | Where-Object -Property "contentId" -Contains $result.properties.packageId
                 $metabody = @{
-                    "apiVersion" = "2022-01-01-preview"
+                    "apiVersion" = "2024-03-01"
                     "name"       = "analyticsrule-" + $verdict.name
                     "type"       = "Microsoft.OperationalInsights/workspaces/providers/metadata"
                     "id"         = $null
@@ -182,7 +182,7 @@ foreach ($result in $results ) {
                     }
                 }
                 Write-Output "    Updating metadata...."
-                $metaURI = $BaseMetaURI + $verdict.name + "?api-version=2022-01-01-preview"
+                $metaURI = $BaseMetaURI + $verdict.name + "?api-version=2024-03-01"
                 $metaVerdict = Invoke-RestMethod -Uri $metaURI -Method Put -Headers $authHeader -Body ($metabody | ConvertTo-Json -EnumsAsStrings -Depth 5)
                 Write-Output "Succeeded"
             }
