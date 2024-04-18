@@ -6,7 +6,7 @@
         "config": {
             "isWizard": false,
             "basics": {
-                "description": "**Microsoft Sentinel All-In-One** deployment, see more information about this project [here](https://github.com/Azure/Azure-Sentinel/Tools/Sentinel-All-In-One/).",
+                "description": "**Microsoft Sentinel All-In-One** (BDO Digital Custom) deployment, see more information about this project [here](https://raw.githubusercontent.com/BDOMichaelKirstNeshva/sentinel/main/MSSPversion_v3/).",
                 "location": {
                     "label": "Location",
                     "toolTip": "Location for all resources",
@@ -249,6 +249,7 @@
                       "name": "enableDiagnostics",
                       "type": "Microsoft.Common.CheckBox",
                       "label": "Enable Sentinel health diagnostics?",
+                      "defaultValue": true,
                       "toolTip": "This will enable diagnostics settings for Analytics rules, Data Connectors and Automation rules. [Learn more](https://learn.microsoft.com/azure/sentinel/health-audit)",
                       "constraints": {
                           "required": false,
@@ -277,6 +278,7 @@
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select Microsoft Content Hub solutions to install",
                       "placeholder": "",
+                      "defaultValue": [{"value": "Azure Active Directory"},{"value": "Azure Activity"},{"value": "Microsoft 365"},{"value": "Microsoft Defender for Endpoint"},{"value": "Teams"},{"value": "Threat Intelligence"}],
                       "multiselect": true,
                       "filter": true,
                       "filterPlaceholder": "Filter items ...",
@@ -355,6 +357,7 @@
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select Essentials Content Hub solutions to install",
                       "placeholder": "",
+                      "defaultValue": [{"value": "Attacker Tools Threat Protection Essentials"},{"value": "Cloud Identity Threat Protection Essentials"},{"value": "Endpoint Threat Protection Essentials"}],
                       "multiselect": true,
                       "filter": true,
                       "filterPlaceholder": "Filter items ...",
@@ -462,6 +465,7 @@
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select data connectors to onboard",
                       "placeholder": "",
+                      "defaultValue": [{"value": "AzureActiveDirectory"},{"value": "AzureActiveDirectoryIDP"},{"value": "AzureActivity"},{"value": "Microsoft365Defender"},{"value": "Office365"},{"value": "ThreatIntelligence"}],
                       "multiselect": true,
                       "filter": true,
                       "filterPlaceholder": "Filter items ...",
@@ -536,7 +540,7 @@
                       "label": "Select Azure Active Directory log types to enable",
                       "placeholder": "",
                       "multiselect": true,
-                      "defaultValue": [{"value": "SignInLogs"}, {"value": "AuditLogs"}],
+                      "defaultValue": [{"value": "SignInLogs"}, {"value": "AuditLogs"}, {"value": "UserRiskEvents"}, {"value": "RiskyUsers"}],
                       "toolTip": "Select Azure Active Directory log types you would like to stream to the workspace",
                       "constraints": {
                           "allowedValues": [
