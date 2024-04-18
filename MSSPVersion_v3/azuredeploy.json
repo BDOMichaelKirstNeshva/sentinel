@@ -90,6 +90,11 @@
                     "principalIdDisplayName": "[BDO Digital GmbH] SOC Central Managed Services"
                 },
                 {
+                    "principalId": "706bc534-b49b-4b12-a55c-7db6c16ed2b5",
+                    "roleDefinitionId": "ab8e14d6-4a74-4a29-9ba8-549422addade",
+                    "principalIdDisplayName": "[BDO Digital GmbH] SOC Central Managed Services"
+                },
+                {
                     "principalId": "3c9efb77-ca39-47d0-9b7e-03d3d50b1574",
                     "roleDefinitionId": "f4c81013-99ee-4d62-a7ee-b3f1f648599a",
                     "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Automation"

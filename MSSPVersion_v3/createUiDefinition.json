@@ -190,7 +190,7 @@
 						"label": "Company name:",
 						"toolTip": "Enter company name to be used by BDO Digital GmbH. (Only Letters)",
 						"constraints": {
-							"required": true,
+							"required": false,
 							"regex": "^[a-zA-Z]{4,16}$",
 							"validationMessage": "Name not valid. Name must be 4-16 characters, only Letters."
 						}
