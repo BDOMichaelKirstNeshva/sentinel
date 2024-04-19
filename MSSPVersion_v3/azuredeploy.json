@@ -113,6 +113,21 @@
                     "principalId": "3c9efb77-ca39-47d0-9b7e-03d3d50b1574",
                     "roleDefinitionId": "c18f9900-27b8-47c7-a8f0-5b3b3d4c2bc2",
                     "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Automation"
+                },
+                {
+                    "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
+                    "roleDefinitionId": "36243c78-bf99-498c-9df9-86d9f8d28608",
+                    "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
+                },
+                {
+                    "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
+                    "roleDefinitionId": "92aaf0da-9dab-42b6-94a3-d43ce8d16293",
+                    "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
+                },
+                {
+                    "principalId": "eee61a73-673c-40c9-b0ef-84fd95ca4737",
+                    "roleDefinitionId": "f4c81013-99ee-4d62-a7ee-b3f1f648599a",
+                    "principalIdDisplayName": "[BDO Digital GmbH] MSSP SOC Sentinel Tier 2"
                 }
             ]
         },
@@ -469,6 +484,14 @@
         "workspaceName": {
             "type": "string",
             "value": "[parameters('workspaceName')]"
+        },
+        "mspOfferName": {
+            "type": "string",
+            "value": "[concat('Managed by', ' ', parameters('mspOfferName'))]"
+        },
+        "authorizations": {
+            "type": "array",
+            "value": "[variables('authorizations')]"
         },
         "dataConnectorsList": {
             "type": "string",
