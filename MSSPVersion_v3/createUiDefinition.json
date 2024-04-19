@@ -465,7 +465,7 @@
                       "type": "Microsoft.Common.DropDown",
                       "label": "Select data connectors to onboard",
                       "placeholder": "",
-                      "defaultValue": [{"value": "AzureActiveDirectory"},{"value": "AzureActiveDirectoryIDP"},{"value": "AzureActivity"},{"value": "Microsoft365Defender"},{"value": "Office365"},{"value": "ThreatIntelligence"}],
+                      "defaultValue": [{"value": "AzureActiveDirectory"},{"value": "AzureActiveDirectoryIDP"},{"value": "AzureActivity"},{"value": "Office365"},{"value": "ThreatIntelligence"}],
                       "multiselect": true,
                       "filter": true,
                       "filterPlaceholder": "Filter items ...",

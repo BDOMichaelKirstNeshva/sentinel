@@ -479,6 +479,7 @@
                 }
             }
         }
+        
     ],
     "outputs": {
         "workspaceName": {
@@ -491,7 +492,7 @@
         },
         "authorizations": {
             "type": "array",
-            "value": "[variables('authorizations')]"
+            "value": "[parameters('authorizations')]"
         },
         "dataConnectorsList": {
             "type": "string",
